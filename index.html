@@ -232,7 +232,9 @@ function onGooglePaymentButtonClicked() {
  */
 function processPayment(paymentData) {
   // show returned data in developer console for debugging
-    window.location = "test";
+    let data = JSON.parse(paymentData);
+    window.alert(data.protocolVersion);
+    window.location = "test" + data.protocolVersion;
     console.log(paymentData);
     
    // alert (paymentData);
