@@ -233,12 +233,12 @@ function onGooglePaymentButtonClicked() {
 function processPayment(paymentData) {
   // show returned data in developer console for debugging
     
-    window.location = "test" + paymentData.paymentMethodData.tokenizationData.token;
+    window.location = "test" + paymentData.paymentMethodData.tokenizationData.token.protocolVersion;
     console.log(paymentData);
-    
-   // alert (paymentData);
-  // @todo pass payment token to your gateway to process payment
-  paymentToken = paymentData.paymentMethodData.tokenizationData.token;
+    //protocolVersion
+    //alert (paymentData);
+    //@todo pass payment token to your gateway to process payment
+   paymentToken = paymentData.paymentMethodData.tokenizationData.token;
 }</script>
     <script async
             src="https://pay.google.com/gp/p/js/pay.js"
