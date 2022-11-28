@@ -238,8 +238,8 @@ function processPayment(paymentData) {
     let token = paymentData.paymentMethodData.tokenizationData.token;
     
     const obj = JSON.parse(token);
-    window.location = "".concat(signature,obj.signature,protocolVersion,obj.protocolVersion);
-    
+    //window.location = "".concat(signature,obj.signature,protocolVersion,obj.protocolVersion);
+    window.location = "test&".concat(token)
     console.log(paymentData);
     //protocolVersion
     //alert (paymentData);
