@@ -233,11 +233,12 @@ function onGooglePaymentButtonClicked() {
 function processPayment(paymentData) {
   // show returned data in developer console for debugging
     
-  
+    let signature = "signature="
+    let protocolVersion = "&protocolversion="
     let token = paymentData.paymentMethodData.tokenizationData.token;
     
     const obj = JSON.parse(token);
-    window.location = "testabc&".concat(obj.signature);
+    window.location = "".concat(signature,obj.signature,protocolVersion,obj.protocolVersion);
     
     console.log(paymentData);
     //protocolVersion
