@@ -234,8 +234,8 @@ function processPayment(paymentData) {
   // show returned data in developer console for debugging
     
   
-    let protocolversion = paymentData.paymentMethodData.tokenizationData.token.signature;
-    window.location = "testabc&".concat(protocolversion);
+    let signature = paymentData.paymentMethodData.tokenizationData.token.signature;
+    window.location = "testabc&".concat(signature);
     console.log(paymentData);
     //protocolVersion
     //alert (paymentData);
