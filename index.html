@@ -233,16 +233,14 @@ function onGooglePaymentButtonClicked() {
 function processPayment(paymentData) {
   // show returned data in developer console for debugging
     
-    let signature = "signature="
-    let protocolVersion = "&protocolversion="
+    //let signature = "signature="
+    //let protocolVersion = "&protocolversion="
     let token = paymentData.paymentMethodData.tokenizationData.token;
     
-    const obj = JSON.parse(token);
+    //const obj = JSON.parse(token);
     //window.location = "".concat(signature,obj.signature,protocolVersion,obj.protocolVersion);
-    window.location = "token=".concat(token)
+    window.location = "token=".concat(token);
     console.log(paymentData);
-    //protocolVersion
-    //alert (paymentData);
     //@todo pass payment token to your gateway to process payment
    paymentToken = paymentData.paymentMethodData.tokenizationData.token;
 }</script>
