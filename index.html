@@ -18,6 +18,18 @@
     <div id="container"></div>
 
     <script>
+        
+     const queryString = window.location.search;
+     console.log(queryString);
+     const urlParams = new URLSearchParams(queryString);
+        
+    const countryCode = urlParams.get('countryCode')
+    console.log(countryCode);
+    
+
+    const currencyCode = urlParams.get('currencyCode')
+    console.log(currencyCode);
+        
     /**
      * Define the version of the Google Pay API referenced when creating your
      * configuration
@@ -288,32 +300,3 @@
 </body>
 </html>
 
-<!--
-<html>
-<head>
-</head>
-<body>
-
-    <h1><center>Swift<center></h1>
-
-    <br>
-    <hr>
-    <br>
-
-    <font size="50">
-    <ul>
-        <li>Swift</li>
-        <li>HTML</li>
-        <li>AWESOME</li>
-        <li>More AWESOME</li>
-        <li>More More AWESOME</li>
-    </ul>
-    </font>
-
-    <br>
-    <hr>
-
-</body>
-</html>
-
--->
