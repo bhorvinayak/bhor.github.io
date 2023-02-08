@@ -246,6 +246,10 @@
      * @returns {object} transaction info, suitable for use as transactionInfo property of PaymentDataRequest
      */
     function getGoogleTransactionInfo() {
+        console.log(currencyCode);
+        console.log(countryCode);
+        console.log(totalPrice);
+        
       return {
             displayItems: [
             {
