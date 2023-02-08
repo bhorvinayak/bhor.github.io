@@ -132,9 +132,8 @@
      */
     function getGooglePaymentDataRequest() {
       const paymentDataRequest = Object.assign({}, baseRequest);
-     
-        
-        
+      paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
+      paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
         
       paymentDataRequest.merchantInfo = {
         // @todo a merchant ID is available for a production environment after approval by Google
@@ -236,11 +235,10 @@
      */
     function getGoogleTransactionInfo() {
         
-      paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
-      paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
-         const queryString = window.location.search;
-         console.log(queryString);
-         const urlParams = new URLSearchParams(queryString);
+    
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
         
         let currencyCodeData = urlParams.get('currencyCode');
         let countryCodeData = urlParams.get('countryCode');
