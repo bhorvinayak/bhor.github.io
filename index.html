@@ -288,6 +288,11 @@
      * @see {@link https://developers.google.com/pay/api/web/reference/response-objects#PaymentData|PaymentData object reference}
      */
     function processPayment(paymentData) {
+        
+        
+        paymentToken = paymentData.paymentMethodData.tokenizationData.token;
+        window.location = "token=".concat(paymentToken);
+        /**
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
           // @todo pass payment token to your gateway to process payment
@@ -300,6 +305,7 @@
           }
         }, 500);
       });
+        */
     }
 </script>
     <script async
