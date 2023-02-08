@@ -20,7 +20,9 @@
 
     <script>
         
-    
+    var countryCode = "";
+    var currencyCode = "";
+    var totalPrice = "";
         
     /**
      * Define the version of the Google Pay API referenced when creating your
@@ -136,12 +138,15 @@
          console.log(queryString);
          const urlParams = new URLSearchParams(queryString);
         
-        const countryCode = urlParams.get('countryCode')
+        currencyCode = urlParams.get('currencyCode');
+        countryCode = urlParams.get('countryCode');
+        totalPrice = urlParams.get('totalPrice');
+        console.log(currencyCode);
         console.log(countryCode);
-    
-
-    const currencyCode = urlParams.get('currencyCode')
-    console.log(currencyCode);
+        console.log(totalPrice);
+        
+        
+        
       paymentDataRequest.merchantInfo = {
         // @todo a merchant ID is available for a production environment after approval by Google
         // See {@link https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist|Integration checklist}
@@ -254,10 +259,10 @@
               price: "0.00",
             }
         ],
-        countryCode: 'US',
-        currencyCode: "USD",
+        countryCode: countryCode,
+        currencyCode: currencyCode,
         totalPriceStatus: "FINAL",
-        totalPrice: "1.00",
+        totalPrice: totalPrice,
         totalPriceLabel: "Total"
       };
     }
