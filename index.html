@@ -132,18 +132,7 @@
      */
     function getGooglePaymentDataRequest() {
       const paymentDataRequest = Object.assign({}, baseRequest);
-      paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
-      paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
-         const queryString = window.location.search;
-         console.log(queryString);
-         const urlParams = new URLSearchParams(queryString);
-        
-        currencyCode = urlParams.get('currencyCode');
-        countryCode = urlParams.get('countryCode');
-        totalPrice = urlParams.get('totalPrice');
-        console.log(currencyCode);
-        console.log(countryCode);
-        console.log(totalPrice);
+     
         
         
         
@@ -246,6 +235,16 @@
      * @returns {object} transaction info, suitable for use as transactionInfo property of PaymentDataRequest
      */
     function getGoogleTransactionInfo() {
+        
+      paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
+      paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
+         const queryString = window.location.search;
+         console.log(queryString);
+         const urlParams = new URLSearchParams(queryString);
+        
+        let currencyCodeData = urlParams.get('currencyCode');
+        let countryCodeData = urlParams.get('countryCode');
+        let totalPriceData = urlParams.get('totalPrice');
         console.log(currencyCode);
         console.log(countryCode);
         console.log(totalPrice);
@@ -263,8 +262,8 @@
               price: "0.00",
             }
         ],
-        countryCode:  `${countryCode}`,
-        currencyCode:  `${currencyCode}`,
+        countryCode:  currencyCodeData,
+        currencyCode:  currencyCodeData,
         totalPriceStatus: "FINAL",
         totalPrice: "2",
         totalPriceLabel: "Total"
