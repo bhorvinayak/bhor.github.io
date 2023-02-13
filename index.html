@@ -59,10 +59,17 @@
      * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#gateway|PaymentMethodTokenizationSpecification}
      */
     const tokenizationSpecification = {
+        
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        let gateway = urlParams.get('gateway');
+        let gatewayMerchantId = urlParams.get('gatewayMerchantId');
+        
       type: 'PAYMENT_GATEWAY',
       parameters: {
-        'gateway': 'worldpay',
-        'gatewayMerchantId': '08ad021bd7bca75'
+        'gateway': gateway,
+        'gatewayMerchantId': gatewayMerchantId
       }
     };
 
@@ -132,10 +139,15 @@
       paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
       paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
         
+      const queryString = window.location.search;
+      console.log(queryString);
+      const urlParams = new URLSearchParams(queryString);
+      let gpayMerchantId = urlParams.get('gpayMerchantId');
+        
       paymentDataRequest.merchantInfo = {
         // @todo a merchant ID is available for a production environment after approval by Google
         // See {@link https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist|Integration checklist}
-        merchantId: '12345678901234567890',
+        merchantId: gpayMerchantId,
         merchantName: 'CeX Ltd'
       };
 
@@ -151,9 +163,15 @@
      * @returns {google.payments.api.PaymentsClient} Google Pay API client
      */
     function getGooglePaymentsClient() {
+      
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        let gpayEnvironment = urlParams.get('gpayEnvironment');
+       
       if ( paymentsClient === null ) {
         paymentsClient = new google.payments.api.PaymentsClient({
-            environment: 'TEST',
+            environment: gpayEnvironment,
           paymentDataCallbacks: {
             onPaymentAuthorized: onPaymentAuthorized
           }
