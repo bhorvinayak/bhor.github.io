@@ -248,7 +248,8 @@
         console.log(totalPriceData);
         
       return {
-            displayItems: [
+            displayItems: this.getDisplayItems()
+          /**[
             {
               label: "Subtotal",
               type: "SUBTOTAL",
@@ -259,7 +260,7 @@
               type: "TAX",
               price: "0.00",
             }
-        ],
+        ] */,
         countryCode:  countryCodeData,
         currencyCode:  currencyCodeData,
         totalPriceStatus: "FINAL",
@@ -269,6 +270,19 @@
     }
 
 
+    getDisplayItems() {
+        
+     let summary = [{
+      
+     label: 'Subtotal',
+     type: 'SUBTOTAL',
+     price: '4'
+         
+     }]
+  
+     return summary
+   }   
+        
     /**
      * Show Google Pay payment sheet when Google Pay payment button is clicked
      */
