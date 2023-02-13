@@ -168,7 +168,7 @@
       if ( paymentsClient === null ) {
         paymentsClient = new google.payments.api.PaymentsClient({
             environment: gpayEnvironment,
-          paymentDataCallbacks: {
+            paymentDataCallbacks: {
             onPaymentAuthorized: onPaymentAuthorized
           }
         });
@@ -342,20 +342,16 @@
         
         paymentToken = paymentData.paymentMethodData.tokenizationData.token;
         window.location = "?token=".concat(paymentToken);
-        /**
+        
       return new Promise(function(resolve, reject) {
-        setTimeout(function() {
+        //setTimeout(function() {
           // @todo pass payment token to your gateway to process payment
-          paymentToken = paymentData.paymentMethodData.tokenizationData.token;
+         // paymentToken = paymentData.paymentMethodData.tokenizationData.token;
 
-    			if (attempts++ % 2 == 0) {
-    	      reject(new Error('Every other attempt fails, next one should succeed'));
-          } else {
-    	      resolve({});
-          }
-        }, 500);
+    	  resolve({});
+        //}, 500);
       });
-        */
+        
     }
 </script>
     <script async
