@@ -272,13 +272,38 @@
 
     function getDisplayItems() {
         
+     const queryString = window.location.search;
+     console.log(queryString);
+        
+     const urlParams = new URLSearchParams(queryString);
+        
+     let totalPriceData = urlParams.get('totalPrice');
+        
+     let deliveryCharges = urlParams.get('deliveryCharges');
+        
+     let voucherAmount = urlParams.get('voucherAmount');
+        
      let summary = [{
       
      label: 'Subtotal',
      type: 'SUBTOTAL',
-     price: '4'
+     price: totalPriceData
          
      }]
+     
+     summary.push({
+                label: 'Delivery',
+                type: 'SUBTOTAL',
+                price: deliveryCharges
+            })
+
+            if (voucherAmount > 0) {
+                summary.push({
+                    label: 'Voucher',
+                    type: 'SUBTOTAL',
+                    price: '-' + voucherAmount
+                })
+            }
   
      return summary
    }   
