@@ -60,16 +60,12 @@
      */
     const tokenizationSpecification = {
         
-        const queryString = window.location.search;
-        console.log(queryString);
-        const urlParams = new URLSearchParams(queryString);
-        let gateway = urlParams.get('gateway');
-        let gatewayMerchantId = urlParams.get('gatewayMerchantId');
+      
         
       type: 'PAYMENT_GATEWAY',
       parameters: {
-        'gateway': gateway,
-        'gatewayMerchantId': gatewayMerchantId
+        'gateway': 'worldpay',
+        'gatewayMerchantId': '08ad021bd7bca75'
       }
     };
 
