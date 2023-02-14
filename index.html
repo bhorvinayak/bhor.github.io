@@ -334,9 +334,9 @@
         var isGpayButtonTapped = '1'
         var value = {"isGpayButtonTapped": isGpayButtonTapped}
         try {
-            webkit.messageHandlers.sumbitToiOS.postMessage(value);
+            webkit.messageHandlers.weSellGpayPayment.postMessage(value);
             } catch(err) {
-                       console.log('error');
+            console.log('error');
            }
         
         
