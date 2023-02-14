@@ -329,6 +329,18 @@
      * Show Google Pay payment sheet when Google Pay payment button is clicked
      */
     function onGooglePaymentButtonClicked() {
+        
+        
+        var isGpayButtonTapped = '1'
+        var value = {"isGpayButtonTapped": isGpayButtonTapped}
+        try {
+            webkit.messageHandlers.sumbitToiOS.postMessage(value);
+            } catch(err) {
+                       console.log('error');
+           }
+        
+        
+        
       const paymentDataRequest = getGooglePaymentDataRequest();
       paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
 
