@@ -323,13 +323,18 @@
             console.log('error');
            }
         
-        
-        
+      var isOrderGenerated = '1'
+       
+      if isOrderGenerated{
       const paymentDataRequest = getGooglePaymentDataRequest();
       paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
 
       const paymentsClient = getGooglePaymentsClient();
       paymentsClient.loadPaymentData(paymentDataRequest);
+            
+      }
+        
+     
     }
 
     let attempts = 0;
