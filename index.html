@@ -266,23 +266,11 @@
         
       return {
             displayItems: this.getDisplayItems()
-          /**[
-            {
-              label: "Subtotal",
-              type: "SUBTOTAL",
-              price: "1.00",
-            },
-          {
-              label: "Tax",
-              type: "TAX",
-              price: "0.00",
-            }
-        ] */,
-        countryCode:  countryCodeData,
-        currencyCode:  currencyCodeData,
-        totalPriceStatus: "FINAL",
-        totalPrice: totalPriceData,
-        totalPriceLabel: "Total"
+            countryCode:  countryCodeData,
+            currencyCode:  currencyCodeData,
+            totalPriceStatus: "FINAL",
+            totalPrice: totalPriceData,
+            totalPriceLabel: "Total"
       };
     }
 
@@ -361,13 +349,10 @@
         paymentToken = paymentData.paymentMethodData.tokenizationData.token;
         window.location = "?token=".concat(paymentToken);
         
-      return new Promise(function(resolve, reject) {
-        //setTimeout(function() {
-          // @todo pass payment token to your gateway to process payment
-         // paymentToken = paymentData.paymentMethodData.tokenizationData.token;
-
+        return new Promise(function(resolve, reject) {
+        
     	  resolve({});
-        //}, 500);
+        
       });
         
     }
