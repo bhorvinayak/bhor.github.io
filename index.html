@@ -62,14 +62,7 @@
      */
     const tokenizationSpecification = {
         
-      //8fff41931675002
-        /**
-      type: 'PAYMENT_GATEWAY',
-      parameters: {
-        'gateway': 'worldpay',
-        'gatewayMerchantId': '08ad021bd7bca75'
-      }
-        */
+     
         type: 'PAYMENT_GATEWAY',
       parameters: {
         'gateway': 'worldpay',
@@ -267,19 +260,7 @@
         console.log(totalPriceData);
         
       return {
-            displayItems: this.getDisplayItems()
-          /**[
-            {
-              label: "Subtotal",
-              type: "SUBTOTAL",
-              price: "1.00",
-            },
-          {
-              label: "Tax",
-              type: "TAX",
-              price: "0.00",
-            }
-        ] */,
+            displayItems: this.getDisplayItems(),
         countryCode:  countryCodeData,
         currencyCode:  currencyCodeData,
         totalPriceStatus: "FINAL",
@@ -364,12 +345,9 @@
         window.location = "?token=".concat(paymentToken);
         
       return new Promise(function(resolve, reject) {
-        //setTimeout(function() {
-          // @todo pass payment token to your gateway to process payment
-         // paymentToken = paymentData.paymentMethodData.tokenizationData.token;
-
-    	  resolve({});
-        //}, 500);
+        
+            resolve({});
+       
       });
         
     }
