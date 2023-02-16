@@ -324,16 +324,16 @@
             console.log('error');
            }
         
-      var isOrderGenerated = '1'
+      
        
-      //if isOrderGenerated == '1'{
+     
       const paymentDataRequest = getGooglePaymentDataRequest();
       paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
 
       const paymentsClient = getGooglePaymentsClient();
       paymentsClient.loadPaymentData(paymentDataRequest);
             
-     // }
+     
         
      
     }
