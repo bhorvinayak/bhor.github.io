@@ -360,6 +360,16 @@
       });
         
     }
+    
+      function isOrderGenerated(jsonData) {
+  
+        console.log('jsonData =' , jsonData);
+        var orderData = JSON.parse(jsonData);
+        var isGeneratedOrder = orderData['isGenerated'];
+        console.log('isGeneratedOrder =' , isGeneratedOrder);
+            
+    }
+        
 </script>
     <script async
             src="https://pay.google.com/gp/p/js/pay.js"
