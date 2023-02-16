@@ -106,6 +106,10 @@
      * @see {@link getGooglePaymentsClient}
      */
     let paymentsClient = null;
+        
+        
+        
+    var isGeneratedOrder = '0'
 
     /**
      * Configure your site's support for payment methods supported by the Google Pay
@@ -117,6 +121,8 @@
      *
      * @returns {object} Google Pay API version, payment methods supported by the site
      */
+        
+        
     function getGoogleIsReadyToPayRequest() {
       return Object.assign(
           {},
@@ -324,7 +330,7 @@
             console.log('error');
            }
         
-      var isGeneratedOrder = '1'
+      
        if (isGeneratedOrder == '1'){
        const paymentDataRequest = getGooglePaymentDataRequest();
       paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
@@ -365,9 +371,9 @@
   
         console.log('jsonData =' , jsonData);
         var orderData = JSON.parse(jsonData);
-        var isGeneratedOrder = orderData['isGenerated'];
+        isGeneratedOrder = orderData['isGenerated'];
         console.log('isGeneratedOrder =' , isGeneratedOrder);
-            
+          
     }
         
 </script>
