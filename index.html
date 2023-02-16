@@ -16,8 +16,9 @@
     <title></title>
 
 </head>
-<body  onload=“javascript:onGooglePayLoaded();“>
+<body>
 
+    window.onload = onGooglePaymentButtonClicked()
     
     <div id="container"></div>
 
@@ -325,14 +326,14 @@
         
       var isOrderGenerated = '1'
        
-      if isOrderGenerated == '1'{
+      //if isOrderGenerated == '1'{
       const paymentDataRequest = getGooglePaymentDataRequest();
       paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
 
       const paymentsClient = getGooglePaymentsClient();
       paymentsClient.loadPaymentData(paymentDataRequest);
             
-      }
+     // }
         
      
     }
